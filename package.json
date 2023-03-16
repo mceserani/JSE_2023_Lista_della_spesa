@@ -1,0 +1,22 @@
+{
+  "name": "jse_2023_lista_della_spesa",
+  "version": "1.0.0",
+  "description": "Gestione di una semplice lista della spesa",
+  "main": "lista_della_spesa.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mceserani/JSE_2023_Lista_della_spesa.git"
+  },
+  "author": "Matteo Ceserani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mceserani/JSE_2023_Lista_della_spesa/issues"
+  },
+  "homepage": "https://github.com/mceserani/JSE_2023_Lista_della_spesa#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4"
+  }
+}
