@@ -1,7 +1,7 @@
 {
   "name": "jse_2023_lista_della_spesa",
   "version": "1.0.0",
-  "description": "gestione di una semplice lista della spesa",
+  "description": "Gestione di una semplice lista della spesa",
   "main": "lista_della_spesa.js",
   "scripts": {
     "test": "jest"
@@ -16,7 +16,6 @@
     "url": "https://github.com/mceserani/JSE_2023_Lista_della_spesa/issues"
   },
   "homepage": "https://github.com/mceserani/JSE_2023_Lista_della_spesa#readme",
-  "type": "module",
   "dependencies": {
     "inquirer": "^9.1.4"
   }
