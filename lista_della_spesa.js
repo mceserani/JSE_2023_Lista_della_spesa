@@ -34,39 +34,68 @@ function showMenu() {
     });
 }
 
+const itemToRemove = [
+    {
+        type: "input",
+        name: "toRemove",
+        message: "Quale elemento vuoi rimuovere?",
+    }
+];
+
+const itemToAdd = [
+    {
+        type: "input",
+        name: "toAdd",
+        message: "Quale elemento vuoi aggiungere?",
+    }
+];
+
 // Definiamo una funzione che permette all'utente di aggiungere un elemento alla lista
 // Usare inquirer.prompt() per chiedere all'utente di inserire un elemento da aggiungere alla lista
 // Al termine dell'operazione, mostriamo nuovamente il menù delle opzioni
 function addToList() {
-  
-  // SCRIVI IL TUO CODICE QUI
-
+    inquirer.prompt(itemToAdd).then((answers) => {
+        shoppingList.push(answers.toAdd);
+        console.log("Elemento aggiunto");
+        showMenu();
+    });
 }
 
 // Definiamo una funzione che permette all'utente di rimuovere un elemento dalla lista
 // Usare inquirer.prompt() per chiedere all'utente di inserire un elemento da rimuovere dalla lista
 // Al termine dell'operazione, mostriamo nuovamente il menù delle opzioni
 function removeFromList() {
-    
-    // SCRIVI IL TUO CODICE QUI
-  
+    inquirer.prompt(itemToRemove).then((answers) => {
+        const pos = shoppingList.indexOf(answers.toRemove);
+        if (pos == -1)
+            console.log("Elemento non presente nella lista.");
+        else{
+            shoppingList = shoppingList.slice(0,pos).concat(shoppingList.slice(pos+1));
+            console.log("L'elemento è stato rimosso dalla lista.");
+        }
+        showMenu();
+    });
 }
 
 // Definiamo una funzione che mostra la lista della spesa
 // Se la lista è vuota, mostriamo un messaggio di avvertimento
 // Al termine dell'operazione, mostriamo nuovamente il menù delle opzioni
 function showList() {
-  
-  // SCRIVI IL TUO CODICE QUI
-
+    if (shoppingList.length == 0)
+        console.log("La lista è vuota!");
+    else{
+        for (let i = 0; i < shoppingList.length; i++)
+            console.log(shoppingList[i]);
+    }
+    showMenu();
 }
 
 // Definiamo una funzione che svuota completamente la lista della spesa
 // Al termine dell'operazione, mostriamo nuovamente il menù delle opzioni
 function clearList() {
-  
-  // SCRIVI IL TUO CODICE QUI
-
+  shoppingList = [];
+  console.log("La lista della spesa è stata svuotata!");
+  showMenu();
 }
 
 // Avviamo il programma mostrando il menù delle opzioni
